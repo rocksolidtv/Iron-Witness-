@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Iron Witness Media | Video Marketing Specialist</title>
+  <meta name="description" content="Iron Witness Media helps local businesses in Middleton, Tennessee and surrounding areas get more customers with short videos. Simple monthly packages. Fast turnaround." />
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --card:#12121a;
+      --text:#f3f4f6;
+      --muted:#b6b8c3;
+      --line:#2a2a3a;
+      --accent:#e11d48; /* iron red */
+      --accent2:#f97316; /* ember */
+      --good:#22c55e;
+      --shadow: 0 12px 40px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1040px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 500px at 20% -10%, rgba(225,29,72,.18), transparent 55%),
+        radial-gradient(700px 400px at 90% 10%, rgba(249,115,22,.12), transparent 50%),
+        radial-gradient(900px 600px at 50% 120%, rgba(225,29,72,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.35;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 16px 64px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      background: rgba(18,18,26,.72);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width: 260px}
+    .logo{
+      width:54px;
+      height:54px;
+      object-fit:contain;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding:6px;
+    }
+    .brand h1{font-size:14px; margin:0; letter-spacing:.08em; text-transform:uppercase}
+    .brand p{margin:2px 0 0; font-size:12px; color:var(--muted)}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      text-decoration:none;
+      font-size:13px;
+      padding:8px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      color:var(--muted);
+    }
+    nav a:hover{
+      color:var(--text);
+      border-color: rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:650;
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn.primary{
+      border: 1px solid rgba(225,29,72,.55);
+      background: linear-gradient(135deg, rgba(225,29,72,.95), rgba(249,115,22,.88));
+      box-shadow: 0 14px 36px rgba(225,29,72,.22);
+    }
+    .btn.primary:hover{filter:brightness(1.05)}
+    .btn:hover{background: rgba(255,255,255,.08)}
+    .hero{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){ .hero{grid-template-columns: 1fr} }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(18,18,26,.9), rgba(18,18,26,.78));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .pad{padding:22px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(225,29,72,.35);
+      background: rgba(225,29,72,.10);
+      color: #ffd3dd;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .hero h2{
+      margin:14px 0 10px;
+      font-size: 38px;
+      letter-spacing:-.02em;
+      line-height:1.05;
+    }
+    .hero p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size: 16px;
+      max-width: 62ch;
+    }
+    .hero .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .pill{
+      font-size:13px; color:var(--muted);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:9px 10px; border-radius: 999px;
+    }
+    .right{display:flex; flex-direction:column; gap:16px}
+    .mini{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(22,22,35,.92), rgba(18,18,26,.76));
+      box-shadow: var(--shadow);
+    }
+    .mini h3{margin:0 0 8px; font-size:16px}
+    .mini p{margin:0; color:var(--muted); font-size:13px}
+    .list{
+      margin:14px 0 0; padding:0; list-style:none;
+      display:grid; gap:10px;
+    }
+    .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px; margin-top:5px;
+      background: linear-gradient(135deg, rgba(225,29,72,.95), rgba(249,115,22,.85));
+      flex: 0 0 auto;
+      box-shadow: 0 0 0 4px rgba(225,29,72,.10);
+    }
+    section{margin-top: 18px}
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    @media (max-width: 920px){ .grid2{grid-template-columns: 1fr} }
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-bottom: 12px;
+    }
+    .sectionTitle h3{margin:0; font-size:18px}
+    .sectionTitle span{color:var(--muted); font-size:13px}
+    .pricing{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width: 980px){ .pricing{grid-template-columns: 1fr} }
+    .priceCard{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(18,18,26,.92), rgba(18,18,26,.72));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .priceCard .head{padding:18px}
+    .priceCard .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; color:var(--muted);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:7px 10px; border-radius:999px;
+    }
+    .priceCard h4{margin:12px 0 6px; font-size:18px}
+    .price{
+      font-size:34px; font-weight:900; letter-spacing:-.02em;
+      margin: 0 0 6px;
+    }
+    .price small{font-size:13px; color:var(--muted); font-weight:600}
+    .features{padding:0 18px 18px; margin:0; list-style:none; display:grid; gap:10px}
+    .features li{
+      display:flex; gap:10px; align-items:flex-start;
+      color:var(--muted); font-size:14px;
+    }
+    .check{color: var(--good); font-weight: 900; margin-top:1px}
+    .best{
+      border-color: rgba(225,29,72,.50);
+      box-shadow: 0 16px 44px rgba(225,29,72,.16);
+      transform: translateY(-2px);
+    }
+    .best::after{
+      content:"Most Popular";
+      position:absolute; top:14px; right:14px;
+      font-size:12px; font-weight:800;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(225,29,72,.14);
+      border:1px solid rgba(225,29,72,.35);
+      color:#ffd3dd;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .ctaRow{padding: 0 18px 18px}
+    .ctaRow .btn{width:100%}
+    .portfolio{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+    }
+    .tile{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(22,22,35,.92), rgba(18,18,26,.72));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .thumb{
+      aspect-ratio: 16/9;
+      width:100%;
+      background: rgba(255,255,255,.03);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .tile .pad p{margin-top:8px; font-size:13px}
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width: 920px){ .contactGrid{grid-template-columns: 1fr} }
+    label{display:block; font-size:13px; color:var(--muted); margin: 0 0 6px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
+    @media (max-width: 620px){ .row{grid-template-columns: 1fr} }
+    .fineprint{color:var(--muted); font-size:12px; margin-top:10px}
+    footer{margin-top: 22px; color: var(--muted); font-size:12px; text-align:center}
+    .note{
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
+      padding:12px 12px;
+      border-radius: 14px;
+      color: var(--muted);
+      font-size:13px;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size:12px;
+    }
+    .videoFrame{
+      width:100%;
+      height:100%;
+      aspect-ratio:16/9;
+      border:0;
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <!-- Put your logo file named "logo.png" in the same folder as this HTML -->
+        <img src="logo.png" alt="Iron Witness Media Logo" class="logo">
+        <div>
+          <h1>Iron Witness Media</h1>
+          <p>James “Rocky” Smith • Video Marketing Specialist • Middleton, TN + surrounding areas</p>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Packages</a>
+        <a href="#work">Sample</a>
+        <a href="#contact">Contact</a>
+        <a class="btn primary" href="#contact">Get a free sample video</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <div class="pad">
+          <div class="kicker">Short videos that bring customers</div>
+          <h2>I can help bring more customers to your business.</h2>
+          <p>
+            I create simple, high-energy short videos for local businesses in <strong>Middleton, Tennessee</strong> and surrounding areas.
+            No ads. No complicated marketing. Just consistent content that makes people walk in the door.
+            <br><br>
+            <strong>Bonus:</strong> Every package includes <strong>custom background music</strong> picked to match your business vibe.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="#contact">Book a free sample video</a>
+            <a class="btn" href="#pricing">See monthly packages</a>
+            <a class="btn" id="callBtn" href="#">Call</a>
+          </div>
+
+          <div class="pillrow">
+            <div class="pill">✅ Custom background music</div>
+            <div class="pill">✅ 20–45 sec vertical videos</div>
+            <div class="pill">✅ Delivered ready-to-post</div>
+            <div class="pill">✅ Local + fast turnaround</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="mini">
+          <div class="pad">
+            <h3>Who this is for</h3>
+            <p>Restaurants, barbers, auto detailers, gyms, retail, trades, and any local business that wants more customers.</p>
+            <ul class="list">
+              <li><span class="dot"></span><div><strong>Busy owners</strong><br><span style="color:var(--muted)">You don’t have time to film and edit.</span></div></li>
+              <li><span class="dot"></span><div><strong>Businesses that already sell</strong><br><span style="color:var(--muted)">You just want more consistent foot traffic.</span></div></li>
+              <li><span class="dot"></span><div><strong>“We post sometimes”</strong><br><span style="color:var(--muted)">Consistency is what turns views into customers.</span></div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mini">
+          <div class="pad">
+            <div class="badge">⚡ Fastest path</div>
+            <h3 style="margin-top:10px;">Try 1 sample video first.</h3>
+            <p>Zero pressure. If you like it, pick a monthly plan and I’ll keep you consistent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="how" class="grid2">
+      <div class="card">
+        <div class="pad">
+          <div class="sectionTitle">
+            <h3>How it works</h3>
+            <span>Simple. Repeatable. Local.</span>
+          </div>
+          <ul class="list" style="margin-top:0">
+            <li><span class="dot"></span><div><strong>1) Quick filming visit (based on package)</strong><br><span style="color:var(--muted)">We capture what we need fast: product, action, and results.</span></div></li>
+            <li><span class="dot"></span><div><strong>2) I edit + match custom background music</strong><br><span style="color:var(--muted)">Music is tailored to your business vibe so the video feels professional.</span></div></li>
+            <li><span class="dot"></span><div><strong>3) You post all month</strong><br><span style="color:var(--muted)">Consistency builds trust. Trust brings customers.</span></div></li>
+          </ul>
+          <div class="note" style="margin-top:14px;">
+            <strong>Truth:</strong> one video is a flyer. Consistent videos are a habit customers form around your business.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pad">
+          <div class="sectionTitle">
+            <h3>What you get</h3>
+            <span>Clear deliverables</span>
+          </div>
+          <ul class="features" style="padding:0; margin-top:8px">
+            <li><span class="check">✓</span> 20–45 sec vertical videos (Reels/TikTok/Shorts)</li>
+            <li><span class="check">✓</span> Custom background music selected to match your vibe</li>
+            <li><span class="check">✓</span> Simple editing that looks clean and professional</li>
+            <li><span class="check">✓</span> Delivered via text/email or Google Drive link</li>
+          </ul>
+          <div class="note" style="margin-top:14px;">
+            <strong>No fluff:</strong> you’re buying visibility and convenience, not “marketing theory.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="sectionTitle">
+        <h3>Monthly packages</h3>
+        <span>Simple pricing for Middleton + surrounding areas.</span>
+      </div>
+
+      <div class="pricing">
+        <div class="priceCard">
+          <div class="head">
+            <div class="tag">🥉 Starter</div>
+            <h4>Stay visible</h4>
+            <p class="price">$50 <small>/ month</small></p>
+            <p style="color:var(--muted); margin:0">Low commitment. Perfect to start.</p>
+          </div>
+          <ul class="features">
+            <li><span class="check">✓</span> 1 video/month</li>
+            <li><span class="check">✓</span> 10–15 min filming visit</li>
+            <li><span class="check">✓</span> Basic editing</li>
+            <li><span class="check">✓</span> Custom background music</li>
+            <li><span class="check">✓</span> Ready-to-post delivery</li>
+          </ul>
+          <div class="ctaRow">
+            <a class="btn" href="#contact">Choose Starter</a>
+          </div>
+        </div>
+
+        <div class="priceCard best">
+          <div class="head">
+            <div class="tag">🥈 Growth</div>
+            <h4>Build traction</h4>
+            <p class="price">$100 <small>/ month</small></p>
+            <p style="color:var(--muted); margin:0">Best value. Most businesses pick this.</p>
+          </div>
+          <ul class="features">
+            <li><span class="check">✓</span> 3 videos/month</li>
+            <li><span class="check">✓</span> 30–45 min filming session</li>
+            <li><span class="check">✓</span> Captions + clean edits</li>
+            <li><span class="check">✓</span> Custom music matched to your brand</li>
+            <li><span class="check">✓</span> Delivered throughout the month</li>
+          </ul>
+          <div class="ctaRow">
+            <a class="btn primary" href="#contact">Choose Growth</a>
+          </div>
+        </div>
+
+        <div class="priceCard">
+          <div class="head">
+            <div class="tag">🥇 Pro</div>
+            <h4>Stay top-of-mind</h4>
+            <p class="price">$200 <small>/ month</small></p>
+            <p style="color:var(--muted); margin:0">Weekly-style consistency without the hassle.</p>
+          </div>
+          <ul class="features">
+            <li><span class="check">✓</span> 6 videos/month</li>
+            <li><span class="check">✓</span> 60 min filming session</li>
+            <li><span class="check">✓</span> Captions + music (consistent style)</li>
+            <li><span class="check">✓</span> Content ideas included</li>
+            <li><span class="check">✓</span> Priority turnaround</li>
+          </ul>
+          <div class="ctaRow">
+            <a class="btn" href="#contact">Choose Pro</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="note" style="margin-top:14px;">
+        <strong>Payment:</strong> monthly, due before filming. Cancel anytime with 7 days notice.
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="sectionTitle">
+        <h3>Sample Video</h3>
+        <span>Real example of my work.</span>
+      </div>
+
+      <div class="portfolio">
+        <div class="tile">
+          <div class="thumb">
+            <iframe
+              class="videoFrame"
+              src="https://www.youtube.com/embed/RwaQpABcfzw"
+              title="Sample Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="pad">
+            <strong>Local Business Sample</strong>
+            <p>Short promotional video created for a local business using custom music and fast editing.</p>
+
+            <div class="note">
+              Prefer YouTube?
+              <a href="https://youtu.be/RwaQpABcfzw?si=IYyAEj5m14-UUuBo" target="_blank" rel="noopener noreferrer">
+                Click here to open the sample video
+              </a>.
+            </div>
+
+            <div style="margin-top:12px">
+              <a class="btn primary" href="#contact">Book your video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <div class="pad">
+        <div class="sectionTitle">
+          <h3>Book a free sample video</h3>
+          <span>Fast reply. No pressure.</span>
+        </div>
+
+        <div class="contactGrid">
+          <div>
+            <form id="leadForm">
+              <div class="row">
+                <div>
+                  <label for="name">Your name</label>
+                  <input id="name" name="name" placeholder="John Smith" required />
+                </div>
+                <div>
+                  <label for="biz">Business name</label>
+                  <input id="biz" name="biz" placeholder="Smith’s Barbershop" required />
+                </div>
+              </div>
+
+              <div class="row" style="margin-top:12px">
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" placeholder="(731) 000-0000" />
+                </div>
+                <div>
+                  <label for="type">Business type</label>
+                  <select id="type" name="type">
+                    <option>Restaurant / Food</option>
+                    <option>Barber / Salon</option>
+                    <option>Auto / Detail</option>
+                    <option>Gym / Fitness</option>
+                    <option>Retail</option>
+                    <option>Trades / Services</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="margin-top:12px">
+                <label for="msg">What do you want more of?</label>
+                <textarea id="msg" name="msg" placeholder="More customers on slow days, more calls, more walk-ins, promoting a specific item, etc."></textarea>
+              </div>
+
+              <div class="row" style="margin-top:12px">
+                <div>
+                  <label for="pref">Preferred package</label>
+                  <select id="pref" name="pref">
+                    <option>Free sample first</option>
+                    <option>Starter ($50/mo)</option>
+                    <option>Growth ($100/mo)</option>
+                    <option>Pro ($200/mo)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="when">Best time to film</label>
+                  <select id="when" name="when">
+                    <option>Weekday morning</option>
+                    <option>Weekday afternoon</option>
+                    <option>Weekday evening</option>
+                    <option>Weekend</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+                <button class="btn primary" type="submit">Send request</button>
+                <a class="btn" id="textMe" href="#">Text me instead</a>
+                <a class="btn" id="callMe" href="#">Call now</a>
+              </div>
+
+              <div class="fineprint">
+                Tip: Text is fastest. I usually reply same day.
+              </div>
+            </form>
+          </div>
+
+          <div>
+            <div class="mini" style="height:100%">
+              <div class="pad">
+                <h3>Contact</h3>
+                <p>Reach out directly and I’ll get you scheduled.</p>
+
+                <div style="margin-top:14px" class="note">
+                  <div><strong>Name:</strong> James “Rocky” Smith</div>
+                  <div style="margin-top:6px"><strong>Phone:</strong> <a href="tel:17314354921">731-435-4921</a></div>
+                  <div style="margin-top:6px"><strong>Email:</strong> <a href="mailto:Rocky1andonlytenn@gmail.com">Rocky1andonlytenn@gmail.com</a></div>
+                  <div style="margin-top:6px"><strong>Service Area:</strong> Middleton, TN + surrounding areas</div>
+                </div>
+
+                <div style="margin-top:14px" class="note">
+                  <strong>What to expect:</strong>
+                  <ul class="features" style="padding:0; margin:10px 0 0">
+                    <li><span class="check">✓</span> Quick chat (5 minutes)</li>
+                    <li><span class="check">✓</span> Film a sample (15–20 minutes)</li>
+                    <li><span class="check">✓</span> You get a ready-to-post video w/ custom music</li>
+                  </ul>
+                </div>
+
+                <div style="margin-top:14px" class="note">
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          © <span id="year"></span> Iron Witness Media • Middleton, TN
+        </footer>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const YOUR_PHONE = "17314354921";
+    const YOUR_EMAIL = "Rocky1andonlytenn@gmail.com";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const callBtn = document.getElementById("callBtn");
+    const callMe  = document.getElementById("callMe");
+    const callHref = `tel:${YOUR_PHONE}`;
+    callBtn.href = callHref;
+    callMe.href = callHref;
+
+    document.getElementById("textMe").addEventListener("click", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const biz  = document.getElementById("biz").value.trim();
+      const pref = document.getElementById("pref").value;
+      const msg  = document.getElementById("msg").value.trim();
+
+      const body =
+        `Hey Rocky, this is ${name || "[name]"} from ${biz || "[business]"}.\n` +
+        `I’m interested in: ${pref}.\n` +
+        (msg ? `Goal: ${msg}\n` : "") +
+        `When’s your next available filming time?`;
+
+      window.location.href = `sms:${YOUR_PHONE}?&body=${encodeURIComponent(body)}`;
+    });
+
+    document.getElementById("leadForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const biz  = document.getElementById("biz").value.trim();
+      const phone= document.getElementById("phone").value.trim();
+      const type = document.getElementById("type").value;
+      const pref = document.getElementById("pref").value;
+      const when = document.getElementById("when").value;
+      const msg  = document.getElementById("msg").value.trim();
+
+      const subject = `Video Request: ${biz}`;
+      const body =
+        `Name: ${name}\n` +
+        `Business: ${biz}\n` +
+        `Phone: ${phone}\n` +
+        `Type: ${type}\n` +
+        `Preferred: ${pref}\n` +
+        `Best time to film: ${when}\n\n` +
+        `Goal / Notes:\n${msg || "(none)"}\n\n` +
+        `Sent from the Iron Witness Media page.`;
+
+      window.location.href = `mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>
+```0
